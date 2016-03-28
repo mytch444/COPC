@@ -5,41 +5,46 @@ Author: Yuriy Ackermann <ackermann.yuriy@gmail.com>
 
 ### Status of this Memo
 
-This memo provides information for the Internet community.  It does not specify an Internet standard of any kind.  Distribution of this memo is unlimited.
-
-
+This memo provides information for the Internet community.  It does not
+specify an Internet standard of any kind.  Distribution of this memo 
+is unlimited.
 
 ### Copyright Notice
 
 Ackermann Yuriy. 2016 CC BY-SA 4.0
 
-
-
 ### Abstract
 
-This document specifies how two parties can establish and use cryptographically strong communication over post cards. The scheme is designed to be secure, efficient, and easy to use, and as much as it could possibly be, paper implementable.
-
-
+This document specifies how two parties can establish and use 
+cryptographically strong communication over post cards. The scheme is 
+designed to be secure, efficient, and easy to use, and as much as it 
+could possibly be, paper implementable.
 
 ### 1. Rationale and Scope
 
-Sometimes there is need to have secure communication over the post cards, and common means require either share one-time pad, or have preset, previously discussed, and shared key. If two parties have no easy means of communication, then the key must be either shared over insecure channels, or through secure third party. This document describes solution to such an issue, and it called COPC - Crypto over Post Cards.
-
-
+Often there is a need to have secure communication over post cards. 
+But current means require participants to either share a one-time pad,
+or have preset, previously discussed, shared key. If two parties have
+no easy means of communication, then the key must be either shared 
+over insecure channels, or through secure third parties. This document 
+describes a solution to such an issue, and it is called COPC - Crypto 
+over Post Cards.
 
 ### 2. COPC scheme
 
-The COPC scheme build on top of existing DH(Diffie-Hellman) key exchange scheme for key establishment, and Vaginere stream cipher for text encryption. To convert decimal key value into poly-alphabetic key, we will reduce key through polynomial Finite Field.
-
-
+The COPC scheme is build on top of the existing DH(Diffie-Hellman) key 
+exchange scheme for key establishment, and the Vaginere stream cipher 
+for text encryption. 
 
 #### 2.1 
 
 #### 2.2 Decimal block reduction through polynomial Finite Field
 
-During DH we will receive decimal value, that is need to be converted to base 26 alphabet. Previous linear approach shown strong pattern and was dismissed. Finally was decided to use same approach as Rijndael, by using polynomial Finite Fields, to create non-deterministic reduction of decimal block.
-
-
+Once DH has been completed we end up with a decimal value that we will
+need to convert into base 26 before we can use it. A previous linear 
+approach showed a strong pattern and so was dismissed in favor of 
+polynomial finite fields in the same way as Rijndael. So creating a 
+non-deterministic reduciton of a decimal block.
 
 #### 2.2.1 Ensuring Correct Input
 
